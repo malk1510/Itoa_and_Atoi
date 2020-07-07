@@ -25,7 +25,7 @@ include sources.mk
 
 # Platform Overrides
 PLATFORM = HOST
-VERBOSE = VERBOSE
+DEBUG = VERBOSE
 PROGRAM = COURSE1
 # Architectures Specific Flags
 LINKER_FILE = ./msp432p401r.lds
