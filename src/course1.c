@@ -16,14 +16,11 @@
  * @date April 2, 2017
  *
  */
-
-#include <stdint.h>
 #include "course1.h"
 #include "platform.h"
 #include "memory.h"
 #include "data.h"
 #include "stats.h"
-
 int8_t test_data1() {
   uint8_t * ptr;
   int32_t num = -4096;
@@ -32,7 +29,7 @@ int8_t test_data1() {
 
   PRINTF("\ntest_data1();\n");
   ptr = (uint8_t*) reserve_words( DATA_SET_SIZE_W );
-
+  PRINTF("SFFSADSFA");
   if (! ptr )
   {
     return TEST_ERROR;

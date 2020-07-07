@@ -13,17 +13,19 @@
 PLATFORM=HOST
 
 ifeq ($(PLATFORM), HOST)
-	SOURCES = ./src/main.c \
+	SOURCES = ./src/course1.c \
+		  ./src/main.c \
 		  ./src/memory.c \
 		  ./src/stats.c \
-		  ./src/course1.c
+		  ./src/data.c
 	INCLUDES = -I ./include/common
 
 else
-	SOURCES = ./src/main.c \
+	SOURCES = ./src/course1.c \
+		  ./src/main.c \
 		  ./src/memory.c \
 		  ./src/stats.c \
-		  ./src/course1.c \
+		  ./src/data.c \
                   ./src/interrupts_msp432p401r_gcc.c \
                   ./src/startup_msp432p401r_gcc.c \
 		  ./src/system_msp432p401r.c

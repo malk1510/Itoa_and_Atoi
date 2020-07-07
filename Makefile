@@ -25,7 +25,8 @@ include sources.mk
 
 # Platform Overrides
 PLATFORM = HOST
-
+VERBOSE = VERBOSE
+PROGRAM = COURSE1
 # Architectures Specific Flags
 LINKER_FILE = ./msp432p401r.lds
 CPU = cortex-m4
@@ -39,18 +40,18 @@ COMMONFLAGS = -Wall \
 	      -O0 \
 	      -g \
 	      -std=c99
-CPPFLAGS = $(INCLUDES) -D$(PLATFORM)
+CPPFLAGS = $(INCLUDES) -D$(PLATFORM) -D$(PROGRAM) -D$(VERBOSE)
 
 ifeq ($(PLATFORM),HOST)
 	CFLAGS = $(COMMONFLAGS)
-	LDFLAGS = -Wl,-Map=c1m2.map
+	LDFLAGS = -Wl,-Map=course1.map
 	SIZE = size
 else
 	CC=arm-none-eabi-gcc
 	LD=arm-none-eabi-ld
 	ARCHFLAGS = -mcpu=$(CPU) -m$(ARCH) -march=armv7e-m -mfloat-abi=hard -mfpu=fpv4-sp-d16 --specs=$(SPECS)
 	CFLAGS = $(COMMONFLAGS) $(ARCHFLAGS)
-	LDFLAGS = -Wl,-Map=c1m2.map -T $(LINKER_FILE)
+	LDFLAGS = -Wl,-Map=course1.map -T $(LINKER_FILE)
 	SIZE = arm-none-eabi-size
 endif
 
@@ -62,8 +63,8 @@ CPPS = $(SOURCES:.c=.i)
 %.i:%.c
 	$(CC) -E $(CPPFLAGS) -o $@ $<
 
-%.d:%.i
-	$(CC) -M $< -o $@
+%.d:%.c
+	$(CC) -M -E $< $(CPPFLAGS) -o $@
 
 %.asm:%.i
 	$(CC) -S $< $(CFLAGS) -o $@
@@ -73,12 +74,12 @@ compile-all:$(OBJS)
 %.o:%.c
 	$(CC) -c $< $(CFLAGS) $(CPPFLAGS) -o $@
 
-c1m2.out:$(OBJS)
+course1.out:$(OBJS)
 	$(CC) $(LDFLAGS) $(ARCHFLAGS) $(OBJS) -o $@
 
 .PHONY:build
-build: c1m2.out $(DEPS)
-	$(SIZE) -Bx course1.out
+build: course1.out $(DEPS)
+	$(SIZE) course1.out
 
 .PHONY:clear
 clear:

@@ -21,7 +21,8 @@
  */
 #ifndef __MEMORY_H__
 #define __MEMORY_H__
-
+#include <stdint.h>
+#include <stddef.h>
 /**
  * @brief Sets a value of a data array 
  *
@@ -89,5 +90,39 @@ void set_all(char * ptr, char value, unsigned int size);
  * @return void.
  */
 void clear_all(char * ptr, unsigned int size);
+/**
+ * @brief Moves elements from one pointer to another
+ *
+ * Given a source and a destination pointer, this function will copy the
+ * datas of a given number of pointers, starting from the source pointer, to the
+ * same length of bytes starting from the destination pointer, by initialising 
+ * all source elements to zero.
+ *
+ * @param src Pointer to source
+ * @param dst Pointer to destination
+ * @param length Number of elements to move
+ *
+ * @return Destination pointer
+ */
+uint8_t* my_memmove(uint8_t* src, uint8_t* dst, size_t length);
+
+/**
+ * @brief Copies elements from one pointer to another
+ *
+ * Given a source and destination pointer, this function copies all
+ * pointers from source to destination, without any consideration of overlap.
+ *
+ * @param src Pointer to source
+ * @param dst Pointer to destination
+ * @param length Number of elements to copy
+ *
+ * @return Destination Pointer
+ */
+uint8_t* my_memcopy(uint8_t* src, uint8_t* dst, size_t length);
+uint8_t* my_memset(uint8_t* src, size_t length, uint8_t value);
+uint8_t* my_memzero(uint8_t* src, size_t length);
+uint8_t* my_reverse(uint8_t* src, size_t length);
+uint32_t* reserve_words(size_t length);
+void free_words(uint32_t* src);
 
 #endif /* __MEMORY_H__ */

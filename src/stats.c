@@ -16,14 +16,14 @@
  * finds the mean, median, max and min values
  * of the terms of the array
  *
- * Tej Ved
+ * Malhar Kulkarni
  * 13/06/2020
  *
  */
 
 
 
-#include <stdio.h>
+#include "platform.h"
 #include "stats.h"
 
 /* Size of the Data Set */
@@ -36,7 +36,7 @@ unsigned char find_minimum(unsigned char* ch, int len);
 unsigned char find_maximum(unsigned char* ch, int len);
 unsigned char find_mean(unsigned char* ch, int len);
 unsigned char find_median(unsigned char* ch, int len);
-int main() {
+int main2() {
   unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
                               114, 88,   45,  76, 123,  87,  25,  23,
                               200, 122, 150, 90,   92,  87, 177, 244,
@@ -59,15 +59,17 @@ int main() {
 /* Add other Implementation File Code Here */
 void print_statistics(unsigned char min, unsigned char max, unsigned char mean, unsigned char median)
 {
-	printf("Minimum:\t%c\nMaximum:\t%c\nMean:\t%c\nMedian:\t%c\n",min,max,mean,median);
+	PRINTF("Minimum:\t%c\nMaximum:\t%c\nMean:\t%c\nMedian:\t%c\n",min,max,mean,median);
 }
 void print_array(unsigned char* ch,int len)
 {
-	for(int i=0;i<len;i++)
-	{
-		printf("%c\t",ch[i]);
-	}
-	printf("\n");
+	#ifdef VERBOSE
+		for(int i=0;i<len;i++)
+		{
+			PRINTF("%c\t",ch[i]);
+		}
+		PRINTF("\n");
+	#endif
 }
 unsigned char find_median(unsigned char* ch, int len)
 {
