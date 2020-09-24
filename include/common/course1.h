@@ -12,8 +12,7 @@
  * @file course1.h 
  * @brief This file is to be used to course 1 final assessment.
  *
- * @author Alex Fosdick
- * @date April 2, 2017
+ * @author Malhar Kulkarni
  *
  */
 #ifndef __COURSE1_H__
@@ -48,7 +47,7 @@ void course1(void);
  * This function calls the my_itoa and my_atoi functions to validate they
  * work as expected for hexadecimal numbers.
  *
- * @return void
+ * @return int8_t
  */
 int8_t test_data1();
 
@@ -58,7 +57,7 @@ int8_t test_data1();
  * This function calls the my_itoa and my_atoi functions to validate they
  * work as expected for decimal numbers. 
  *
- * @return void
+ * @return int8_t
  */
 int8_t test_data2();
 
@@ -69,7 +68,7 @@ int8_t test_data2();
  * over lap in anyway. This function should print that a move worked correctly
  * for a move from source to destination.
  *
- * @return void
+ * @return int8_t
  */
 int8_t test_memmove1();
 
@@ -81,7 +80,7 @@ int8_t test_memmove1();
  * source pointers. This function should print that a move worked correctly
  * for a move from source to destination regardless of overlap.
  *
- * @return void
+ * @return int8_t
  */
 int8_t test_memmove2();
 
@@ -93,7 +92,7 @@ int8_t test_memmove2();
  * destination pointers. This function should print that a move worked correctly
  * for a move from source to destination regardless of overlap.
  *
- * @return void
+ * @return int8_t
  */
 int8_t test_memmove3();
 
@@ -103,7 +102,7 @@ int8_t test_memmove3();
  * This function calls the my_memcopy functions to validate a copy works
  * correctly. 
  *
- * @return void
+ * @return int8_t
  */
 int8_t test_memcopy();
 
@@ -113,7 +112,7 @@ int8_t test_memcopy();
  * This function calls the memset and memzero functions. This shoudl zero out
  * the bytes from [] to []. This should set the bytes [] to [] with 0xFF.
  *
- * @return void
+ * @return int8_t
  */
 int8_t test_memset();
 
@@ -123,7 +122,7 @@ int8_t test_memset();
  * This function calls the my_reverse function to see if a give set of ASCII
  * characters will properly reverse.
  *
- * @return void
+ * @return int8_t
  */
 int8_t test_reverse();
 
