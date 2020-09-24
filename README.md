@@ -6,3 +6,5 @@ The aim of the project is to make a build system which would convert input integ
 This build system would be able to compile a set of programs in both the host machine and the target MSP432 embedded platform. MSP432 compiles its code using the GNU-based Arm compiler arm-none-eabi-gcc.
 
 The build system comprises a makefile which has MSP432 as its only platfrom override other than the Host.
+
+To run the atoi and itoa conversion, there are tests and executions present in the 'course1.c' file inside the 'include' folder, which will execute all these operations.
