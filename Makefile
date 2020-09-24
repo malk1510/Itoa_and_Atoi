@@ -14,11 +14,14 @@
 #
 # Use: make [TARGET] [PLATFORM-OVERRIDES]
 #
-# Build Targets:
-#      <Put a description of the supported targets here>
+# Targets:
+# 	1. Precompiled file *.i
+#	2. Assembly file *.asm
+#	3. Object file *.o
+#	4. Output executable course1.out
 #
 # Platform Overrides:
-#      <Put a description of the supported Overrides here
+#      1. MSP432 - Uses Arm architecture
 #
 #------------------------------------------------------------------------------
 include sources.mk
