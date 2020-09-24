@@ -7,4 +7,6 @@ This build system would be able to compile a set of programs in both the host ma
 
 The build system comprises a makefile which has MSP432 as its only platfrom override other than the Host.
 
+Here, atoi and itoa functions have been written with the help of various memory manipulation fucntions I have written in the file 'memory.c' in the folder 'include'.
+
 To run the atoi and itoa conversion, there are tests and executions present in the 'course1.c' file inside the 'include' folder, which will execute all these operations.
